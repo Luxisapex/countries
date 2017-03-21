@@ -1,5 +1,10 @@
 <template>
   <div id="app">
+    <router-link to="/">Home</router-link>
+    <router-link to="/country">Country</router-link>
+    <router-link to="/top10">Top 10</router-link>
+    <router-view></router-view>
+    
     <input type="button" name="name" value="Generate random country" v-on:click="changeCountry">
     <country :country="currentCountry"></country>
   </div>
