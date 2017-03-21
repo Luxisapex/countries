@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <h1>Welcome</h1>
-    <input type="button" name="name" value="" v-on:click="changeHeadline">
+    <input type="button" name="name" value="Generate random country" v-on:click="changeCountry">
     <country :country="currentCountry"></country>
   </div>
 </template>
@@ -33,10 +32,11 @@ export default {
           .then(data => this.countries.push(...data));
     },
 
-    changeHeadline() {
+    // To-do: not only random
+    changeCountry() {
       const randomNumber = Math.floor(this.countries.length*Math.random());
       console.log(randomNumber);
-      this.currentCountry = this.countries[randomNumber].name;
+      this.currentCountry = this.countries[randomNumber];
     }
 
   },
