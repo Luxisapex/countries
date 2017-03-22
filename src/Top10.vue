@@ -1,6 +1,9 @@
 <template>
   <div id="top10">
-    
+    <select class="" name="listBy">
+      <option value="population">Population</option>
+      <option value="landSize">Land size</option>
+    </select>
   </div>
 </template>
 
