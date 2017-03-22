@@ -2,10 +2,7 @@
   <div id="app">
     <router-link to="/">Home</router-link>
     <router-link to="/top10">Top 10</router-link>
-    <div v-if="countries">
-      <router-link :to="{ name: 'country', params: { name: randomCountry() }}">Random country</router-link>
-    </div>
-
+    <router-link v-if="countries.length" :to="{ name: 'country', params: { name: randomCountry() }}">Random country</router-link>
     <router-view></router-view>
   </div>
 </template>
