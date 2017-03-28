@@ -1,5 +1,6 @@
 <template>
-  <div id="countries">
+  <!-- does not render id -->
+  <div :id="country.alpha3code">
 
     <h2>{{country.name}}</h2>
     <!-- To-do: fix sizing
@@ -13,7 +14,7 @@
 export default {
   data () {
     return {
-      country: { name: 'Waiting' }
+      country: { name: 'Waiting', alpha3code: 'abc' }
     }
   },
 
@@ -24,10 +25,10 @@ export default {
     },
 
     fetchCountry() {
-      const localUrl = this.$root.url + '/name/' + this.$route.params.name;
+      const localUrl = this.$root.url + '/name/' + this.$route.params.countryName;
       fetch(localUrl)
-          .then(response => response.json())
-          .then(data => this.changeCountry(...data));
+          .then(countryResponse => countryResponse.json())
+          .then(countryData => this.changeCountry(...countryData));
     },
   },
 

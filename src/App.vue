@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <router-link to="/">Home</router-link>
-    <router-link to="/top10">Top 10</router-link>
-    <router-link v-if="countries.length" :to="{ name: 'country', params: { name: randomCountry() }}">Random country</router-link>
+    <router-link v-if="countries.length" :to="{ name: 'list', params: { list: 'population', limit: randomLimit() }}">Random List</router-link>
+    <router-link v-if="countries.length" :to="{ name: 'country', params: { countryName: randomCountry() }}">Random Country</router-link>
     <router-view></router-view>
   </div>
 </template>
@@ -23,6 +23,14 @@ export default {
 
     randomCountry() {
       return this.countries[Math.floor(Math.random()*this.countries.length)].name
+    },
+
+    randomLimit() {
+      return Math.floor(Math.random()*this.countries.length);
+    },
+
+    randomList() {
+      return 10;
     },
 
     fetchCountries() {

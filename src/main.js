@@ -4,13 +4,13 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 
 import Country from './Country.vue'
-import Top10 from './Top10.vue'
+import List from './List.vue'
 
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/country/:name', name: 'country', component: Country },
-  { path: '/top10', component: Top10 }
+  { path: '/country/:countryName', name: 'country', component: Country },
+  { path: '/list/:list/:limit', name: 'list', component: List }
 ];
 
 const router = new VueRouter({
