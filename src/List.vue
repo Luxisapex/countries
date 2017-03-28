@@ -2,7 +2,8 @@
   <div id="list">
     <h2>Pop top {{ this.$route.params.limit }}</h2>
     <ul id="list">
-      <li v-for="country in list">
+      <li v-for="country in list" :id="country.name" class="country">
+        <img :src="country.flag" alt="" class="countryFlag"/>
         {{country.name}}
       </li>
 
@@ -52,5 +53,13 @@ export default {
 
 <style lang="scss">
 
+.country {
+  list-style-type: none;
+}
+
+.countryFlag {
+  height: 10px;
+  width: 16px;
+}
 
 </style>
