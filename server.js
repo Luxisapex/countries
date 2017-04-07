@@ -6,7 +6,7 @@ app.use(serveStatic(path.join(__dirname, 'dist')));
 var port = process.env.PORT || 5000;
 
 app.get('/', (req, res) => {
-  res.render('index.ejs');
+  res.render('index.html');
 })
 
 app.listen(port);
